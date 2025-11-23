@@ -13,5 +13,10 @@
         "name": "Sam Smith",
         "role": "Developer",
         "email": "sam@gmail.com"
+    },
+    {
+        "name": "Robert James",
+        "role": "Manager",
+        "email": "robert@gmail.com"
     }
 ]

@@ -49,6 +49,10 @@ def submitdata():
 def success():
     return render_template('success.html')
 
+@app.route('/todo')
+def get_todo():
+    return render_template('todo.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

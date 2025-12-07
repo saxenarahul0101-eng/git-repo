@@ -49,6 +49,23 @@ def submitdata():
 def success():
     return render_template('success.html')
 
+@app.route('/submittodoitem', methods=['POST'])
+def submit_todo_item():
+    item_name = request.form.get('itemName')
+    item_description = request.form.get('itemDescription')
+
+    if not item_name or not item_description:
+        return jsonify({"error": "Missing fields"}), 400
+
+    data = {
+        "itemName": item_name,
+        "itemDescription": item_description
+    }
+
+    collection.insert_one(data)
+
+    return jsonify({"message": "To-Do Item Saved Successfully!"}), 201
+
 
 if __name__ == '__main__':
     app.run(debug=True)
